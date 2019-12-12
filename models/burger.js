@@ -6,8 +6,10 @@ const burger = {
             cb(result);
         });
     },
-    insertOne: function(){
-
+    insertOne: function(cols, vals, cb){
+        orm.insertOne("burgers", cols, vals, function(result){
+            cb(result);
+        });
     },
     updateOne: function(){
 
