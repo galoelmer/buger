@@ -1,7 +1,16 @@
 <ul>
     {{#each burger}}
-    <li>Name: {{this.burger_name}}</li>
-    <button data-id={{this.id}}>Devour it!!</button>
+        {{#if this.devoured}}
+            <li>Name: {{this.burger_name}}</li>
+            <button data-id={{this.id}}>Devour it!!</button>
+        {{/if}}
+    {{/each}}
+</ul>
+<ul>
+    {{#each burger}}
+        {{#unless this.devoured}}
+            <li>Name: {{this.burger_name}}</li>
+        {{/unless}}
     {{/each}}
 </ul>
 <hr>
