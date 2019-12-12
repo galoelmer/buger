@@ -16,6 +16,16 @@ $(function () {
         });
     });
 
+    // Update burger status
+    $(".burgerList").on("click", "button", function(){
+        let id = $(this).data("id");
+        $.ajax("/update/" + id, {
+            type: "PUT"
+        }).then(function(result){
+            location.reload();
+        });
+    });
+
     // Get all burgers from DB and render index page
     $.ajax("/", {
         type: "GET"
