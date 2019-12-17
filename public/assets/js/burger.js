@@ -1,6 +1,6 @@
 $(function () {
     // Create new burger and store it in DB
-    $("#submitButton").on("click", function(event){
+    $("#submitButton").on("click", function (event) {
         event.preventDefault();
         let newBurger = {
             newBurger: $("#burgerName").val().trim()
@@ -9,7 +9,7 @@ $(function () {
         $.ajax("/new", {
             type: "POST",
             data: newBurger
-        }).then(function(result){
+        }).then(function (result) {
             console.log(result);
             // Reload the page to get the updated list
             location.reload();
@@ -17,19 +17,33 @@ $(function () {
     });
 
     // Update burger status
-    $(".burgerList").on("click", "button", function(){
+    $(".burgers-list").on("click", "button", function () {
+        $(this).parent().parent().transition("fade");
         let id = $(this).data("id");
         $.ajax("/update/" + id, {
             type: "PUT"
-        }).then(function(result){
+        }).then(function (result) {
             location.reload();
         });
+    });
+
+    $(".burger-item").on("mouseenter", function () {
+        $(this).find("button")
+            .transition("stop")
+            .transition('horizontal flip');
+    });
+
+    $(".burger-item").on("mouseleave", function () {
+        $(this).find("button")
+            .transition("stop")
+            .transition('horizontal flip');
+        $(".devour-button").css("display", "none");
     });
 
     // Get all burgers from DB and render index page
     $.ajax("/", {
         type: "GET"
-    }).then(function(result){
+    }).then(function (result) {
         console.log("");
     });
 });

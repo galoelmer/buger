@@ -1,21 +1,45 @@
-<ul class="burgerList">
-    {{#each burger}}
-        {{#if this.devoured}}
-            <li>Name: {{this.burger_name}}</li>
-            <button data-id={{this.id}}>Devour it!!</button>
-        {{/if}}
-    {{/each}}
-</ul>
-<ul>
-    {{#each burger}}
-        {{#unless this.devoured}}
-            <li>Name: {{this.burger_name}}</li>
-        {{/unless}}
-    {{/each}}
-</ul>
-<hr>
-<form>
-    <label for="burgerName">Burger Name</label>
-    <input type="text" placeholder="Burger Name" name="burgerName" id="burgerName">
-    <input type="submit" value="Submit" id="submitButton">
-</form>
+<div class="ui raised very padded container">
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <header>
+                <img class="ui centered small image" src="/assets/img/burgerLogo.png" alt="Burger Logo">
+                <h1 class="ui huge header">Eat-Da-Burger!</h1>
+            </header>
+
+            <form>
+                <input class="add-burger__input required" type="text" placeholder="Enter burger name" name="burgerName"
+                    id="burgerName">
+                <input class="add-burger__button" type="submit" value="ADD" id="submitButton">
+            </form>
+
+            <section class="burgers-list">
+                <div class="ui middle aligned selection list">
+                    {{#each burger}}
+                    {{#if this.devoured}}
+                    <div class="item burger-item">
+                        <img class="ui avatar image" src="/assets/img/icon-burger-1.png">
+                        <div class="content">
+                            <div class="header">{{this.burger_name}}</div>
+                            <button class="devour-button" data-id={{this.id}}>Devour it!</button>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+
+                <div class="ui middle aligned selection list">
+                    {{#each burger}}
+                    {{#unless this.devoured}}
+                    <div class="disabled item burger-item-eaten">
+                        <img class="ui avatar image" src="/assets/img/icon-burger-1.png">
+                        <div class="content">
+                            <div class="header">{{this.burger_name}}</div>
+                        </div>
+                    </div>
+                    {{/unless}}
+                    {{/each}}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

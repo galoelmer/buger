@@ -1,0 +1,113 @@
+.container {
+	background: url("/assets/img/burgerFriesBackground.png") no-repeat center center fixed;
+	background-size: contain;
+    margin: 20px;
+    height: 100%;
+}
+
+.ui.huge.header {
+	font-family: cooper-black-std, serif;
+	font-weight: 400;
+	font-size: 3.5em;
+	color: #a73494;
+	text-shadow: 3px 3px 1px rgba(167, 52, 148, 0.4);
+	margin-top: 0px;
+}
+
+form {
+	border-radius: 10px;
+	border: 1px solid rgba(12, 18, 28, 0.38);
+	box-shadow: 0px 2px 4px 0 rgba(12, 18, 28, 0.12);
+	display: flex;
+	margin: 1em auto;
+	width: 40%;
+	background-color: #fff;
+}
+
+.add-burger__input {
+	background-color: transparent;
+	border: none;
+	flex: 1 70%;
+	outline: none;
+	text-align: center;
+	width: 80%;
+	height: 40px;
+}
+
+.add-burger__input::placeholder {
+	color: #e1e1e1;
+	font-size: 1.1em;
+}
+
+.add-burger__button {
+	background-color: rgb(69, 214, 93);
+	border-radius: 0 8px 8px 0;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	flex: 1;
+	font-size: 1.2em;
+	font-weight: bold;
+	font-weight: bold;
+	margin: -1.1px;
+	outline: none;
+}
+
+.add-burger__button:hover {
+	background-color: rgb(65, 199, 87);
+}
+
+.add-burger__button:active {
+	background-color: rgb(60, 168, 78);
+}
+
+.burgers-list {
+	width: 40%;
+    margin: 0 auto;
+}
+
+.ui.selection.list>.item {
+	background-color: #ff6242;
+	border-radius: 10px;
+	border: none;
+	margin: 0 auto 8px;
+    width: 80%;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+    position: relative;
+}
+
+.burger-item-eaten {
+    background-color: #F52900;
+    opacity: 0.4;
+	border-radius: 10px;
+	border: none;
+	margin: 0 auto 8px;
+    width: 80%;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+    position: relative;
+}
+
+.ui.list > .item .header {
+	color: #fff;
+    text-transform: uppercase;
+}
+
+.burger-item button {
+    display: none;
+}
+
+.burger-item button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFE500;
+	border-radius: 10px;
+	border: none;
+    width: 100%;
+    height: 100%;
+    color: #A11515;
+    font-size: 1.8em;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
