@@ -27,7 +27,6 @@ const orm = {
     },
     // Update database
     updateOne: function(tableName, colVal, condition, cb){
-
         // Turn Array values to SQL SET clause eg. ["table", "value"] => "table = value" 
         let arrayToSql = (arr) => {
             return arr.map((val, i) => arr[i]).join("=");
