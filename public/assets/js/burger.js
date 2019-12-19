@@ -1,19 +1,36 @@
 $(function () {
+    // Validate input. Prevent empty input
+    $('.form').form({
+        fields: {
+            name: {
+                identifier: "burgerName",
+                rules: [
+                    {
+                        type: "empty"
+                    }
+                ]
+            }
+        }
+    });
+
     // Create new burger and store it in DB
     $("#submitButton").on("click", function (event) {
         event.preventDefault();
-        let newBurger = {
-            newBurger: $("#burgerName").val().trim()
-        };
-        // Sent POST request
-        $.ajax("/new", {
-            type: "POST",
-            data: newBurger
-        }).then(function (result) {
-            console.log(result);
-            // Reload the page to get the updated list
-            location.reload();
-        });
+        // Check if input is not empty
+        if ($(".form").form("is valid")) {
+            let newBurger = {
+                newBurger: $("#burgerName").val().trim()
+            };
+            // Sent POST request
+            $.ajax("/new", {
+                type: "POST",
+                data: newBurger
+            }).then(function (result) {
+                console.log(result);
+                // Reload the page to get the updated list
+                location.reload();
+            });
+        }
     });
 
     // Update burger status

@@ -7,6 +7,8 @@
 
 > Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like. Whenever a user submits a burger's name, the app will display the burger waiting to be devoured. The app will store every burger in a database, whether devoured or not.
 
+### ✨ [Demo](https://infinite-badlands-13683.herokuapp.com/)
+
 ## Prerequisites
 
 - npm >=5.5.0
